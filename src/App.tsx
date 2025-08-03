@@ -1,5 +1,5 @@
 import type { Component } from "solid-js";
-import Navbar from "./components/NavBar";
+import Navbar from "./components/Button";
 
 const App: Component = () => {
   return <Navbar />;
