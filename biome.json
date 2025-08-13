@@ -1,11 +1,13 @@
 {
   "$schema": "https://biomejs.dev/schemas/2.1.3/schema.json",
+  "root": true,
   "vcs": {
     "enabled": false
   },
   "files": {
     "ignoreUnknown": false
   },
+  "assist": { "actions": { "source": { "organizeImports": "on" } } },
   "formatter": {
     "enabled": true,
     "formatWithErrors": false,
@@ -24,48 +26,22 @@
   },
   "linter": {
     "enabled": true,
+    "domains": {
+      "solid": "all"
+    },
     "rules": {
       "recommended": true,
       "correctness": {
         "noNodejsModules": "off",
-        "useExhaustiveDependencies": {
-          "level": "error",
-          "options": {
-            "hooks": [
-              {
-                "name": "createEffect",
-                "closureIndex": 0,
-                "dependenciesIndex": 1
-              },
-              {
-                "name": "createMemo",
-                "closureIndex": 0,
-                "dependenciesIndex": 1
-              },
-              {
-                "name": "createComputed",
-                "closureIndex": 0,
-                "dependenciesIndex": 1
-              },
-              {
-                "name": "createRenderEffect",
-                "closureIndex": 0,
-                "dependenciesIndex": 1
-              },
-              {
-                "name": "createReaction",
-                "closureIndex": 0,
-                "dependenciesIndex": 1
-              }
-            ]
-          }
-        },
         "useHookAtTopLevel": "error"
       },
       "complexity": {
-        "noExcessiveNestedTestSuites": "off",
+        "noExcessiveNestedTestSuites": "on",
         "useLiteralKeys": "off",
         "noForEach": "off"
+      },
+      "nursery": {
+        "noDestructuredProps": "error"
       },
       "style": {
         "noDefaultExport": "off",
