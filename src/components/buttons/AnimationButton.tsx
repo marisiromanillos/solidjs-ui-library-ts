@@ -5,18 +5,19 @@ import { twMerge } from "tailwind-merge";
 interface AnimationSuccessButtonProps {
   text: string;
   onClick: () => void;
-  emoji: string;
+  emoji?: string;
   emojiAnimation?: JSX.Element;
   success?: boolean;
   class?: string;
 }
 
-const EmojiButton: Component<AnimationSuccessButtonProps> = (props) => {
+const AnimationButton: Component<AnimationSuccessButtonProps> = (props) => {
   const merged = mergeProps(
     {
       success: false,
 
       class: "",
+      emoji: "",
     },
     props,
   );
@@ -39,4 +40,4 @@ const EmojiButton: Component<AnimationSuccessButtonProps> = (props) => {
     </div>
   );
 };
-export default EmojiButton;
+export default AnimationButton;

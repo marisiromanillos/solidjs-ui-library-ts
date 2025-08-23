@@ -1,14 +1,14 @@
 import confetti from "canvas-confetti";
 import type { Component } from "solid-js";
 import { createSignal, mergeProps } from "solid-js";
-import EmojiButton from "@/components/buttons/EmojiButton";
+import AnimationButton from "@/components/buttons/AnimationButton";
 
-interface AnimationSuccessButtonProps {
+interface AnimationEmojiButtonProps {
   emoji?: string;
   text?: string;
 }
 
-const AnimationSuccessButton: Component<AnimationSuccessButtonProps> = (props) => {
+const EmojiAnimationButton: Component<AnimationEmojiButtonProps> = (props) => {
   const [success, setSuccess] = createSignal(false);
 
   const merged = mergeProps(
@@ -35,6 +35,6 @@ const AnimationSuccessButton: Component<AnimationSuccessButtonProps> = (props) =
     setTimeout(() => setSuccess(false), 3000);
   };
 
-  return <EmojiButton text={merged.text} emoji={merged.emoji} onClick={handleClick} success={success()} />;
+  return <AnimationButton text={merged.text} emoji={merged.emoji} onClick={handleClick} success={success()} />;
 };
-export default AnimationSuccessButton;
+export default EmojiAnimationButton;
