@@ -1,8 +1,8 @@
 import type { Component } from "solid-js";
-import Navbar from "./components/Button";
+import StatefulPrimaryButton from "@/examples/buttons/StateFulPrimaryButton";
 
 const App: Component = () => {
-  return <Navbar />;
+  return <StatefulPrimaryButton />;
 };
 
 export default App;
