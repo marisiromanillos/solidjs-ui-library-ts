@@ -4,10 +4,11 @@ import { createSignal, mergeProps } from "solid-js";
 import AnimationButton from "@/components/buttons/AnimationButton";
 
 interface AnimationConfettiButtonProps {
-  text?: string; // Optional - will use default if not provided
+  text?: string;
   particleCount?: number;
   spread?: number;
   origin?: { x?: number; y?: number };
+  emoji?: string;
 }
 
 const ConfettiAnimationButton: Component<AnimationConfettiButtonProps> = (props) => {
@@ -15,7 +16,8 @@ const ConfettiAnimationButton: Component<AnimationConfettiButtonProps> = (props)
 
   const merged = mergeProps(
     {
-      text: "Congratulations", // Default text
+      text: "Congratulations",
+      emoji: "🎊",
       particleCount: 100,
       spread: 60,
       origin: { y: 0.6 },
@@ -32,10 +34,10 @@ const ConfettiAnimationButton: Component<AnimationConfettiButtonProps> = (props)
       origin: merged.origin,
     });
 
-    setTimeout(() => setSuccess(false), 5000);
+    setTimeout(() => setSuccess(false), 3000);
   };
 
-  return <AnimationButton emoji="🎊" success={success()} text={merged.text} onClick={onClick} />;
+  return <AnimationButton emoji={merged.emoji} success={success()} text={merged.text} onClick={onClick} />;
 };
 
 export default ConfettiAnimationButton;

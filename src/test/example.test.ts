@@ -8,6 +8,6 @@ describe("example test", () => {
   };
   const emptyArray = mockArray();
   it("returns empty array", () => {
-    expect(emptyArray).toEqual([]); // toEqual is a method of expect
+    expect(emptyArray).toEqual([]);
   });
 });

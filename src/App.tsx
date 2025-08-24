@@ -2,6 +2,7 @@ import type { Component } from "solid-js";
 import EmojiAnimationButton from "@/examples/buttons/EmojiAnimationButton";
 import StatefulPrimaryButton from "@/examples/buttons/StateFulPrimaryButton";
 import ConfettiAnimationButton from "./examples/buttons/ConfettiAnimationButton";
+import FireworkAnimationButton from "./examples/buttons/FireworkAnimationButton";
 
 const App: Component = () => {
   return (
@@ -9,6 +10,7 @@ const App: Component = () => {
       <StatefulPrimaryButton />
       <EmojiAnimationButton />
       <ConfettiAnimationButton />
+      <FireworkAnimationButton />
     </section>
   );
 };
