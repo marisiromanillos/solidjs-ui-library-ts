@@ -3,39 +3,58 @@ import { mergeProps, Show } from "solid-js";
 import { twMerge } from "tailwind-merge";
 import LoadingIcon from "@/components/icons/LoadingIcon";
 
-interface StatefulPrimaryButtonProps {
+export interface PrimaryButtonProps {
   buttonText: string;
-  onClick: () => void;
+  onClick?: () => void | Promise<void>;
   class?: string;
   loading?: boolean;
   disabled?: boolean;
+  error?: boolean;
+  errorMessage?: string;
+  type?: "button" | "submit" | "reset";
+  id?: string;
+  name?: string;
+  ariaLabel?: string;
 }
 
-const PrimaryButton: Component<StatefulPrimaryButtonProps> = (props: StatefulPrimaryButtonProps) => {
+const PrimaryButton: Component<PrimaryButtonProps> = (props) => {
   const merged = mergeProps(
     {
       loading: false,
-      class: "",
       disabled: false,
+      error: false,
+      errorMessage: "❌ Something went wrong on our side, try again later.",
+      class: "",
+      type: "button" as const,
     },
     props,
   );
 
   return (
-    <button
-      class={twMerge(
-        "px-4 py-2 bg-pink-500 flex items-center whitespace-nowrap text-gray-100 rounded-full disabled:opacity-70 disabled:cursor-not-allowed",
-        merged.class,
-      )}
-      type="button"
-      onClick={props.onClick}
-      disabled={merged.disabled || merged.loading}
-    >
-      <Show when={merged.loading}>
-        <LoadingIcon />
+    <div class="inline-block">
+      <Show when={merged.error}>
+        <p class="text-red-500 text-sm mb-2">{merged.errorMessage}</p>
       </Show>
-      {props.buttonText}
-    </button>
+      <button
+        id={merged.id}
+        name={merged.name}
+        aria-label={merged.ariaLabel}
+        class={twMerge(
+          "px-4 py-2 bg-pink-500 flex items-center gap-2 whitespace-nowrap text-gray-100 rounded-full",
+          "hover:bg-pink-600 transition-colors",
+          "disabled:opacity-70 disabled:cursor-not-allowed disabled:hover:bg-pink-500",
+          merged.class,
+        )}
+        type={merged.type}
+        onClick={merged.onClick}
+        disabled={merged.disabled || merged.loading}
+      >
+        <Show when={merged.loading}>
+          <LoadingIcon />
+        </Show>
+        {merged.buttonText}
+      </button>
+    </div>
   );
 };
 
