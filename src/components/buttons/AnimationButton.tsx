@@ -15,7 +15,6 @@ const AnimationButton: Component<AnimationSuccessButtonProps> = (props) => {
   const merged = mergeProps(
     {
       success: false,
-
       class: "",
       emoji: "",
     },

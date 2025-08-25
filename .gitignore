@@ -39,3 +39,7 @@ vite.config.ts.timestamp-*
 /blob-report/
 /playwright/.cache/
 .vercel
+
+# Storybook
+
+storybook-build
