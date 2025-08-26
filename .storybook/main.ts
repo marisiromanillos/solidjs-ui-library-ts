@@ -15,7 +15,7 @@ export default (<StorybookConfig>{
       },
     },
   ],
-  stories: ["../src/stories/**/*.stories.@(ts|tsx|js|jsx)", "../src/stories/**/*.mdx"],
+  stories: ["../src/stories/**/*.stories.@(ts|tsx|js|jsx)", "../src/stories/**/*.tsx"],
   async viteFinal(config) {
     // Try using the exact same Vite config as your main app
     const { default: tailwindPlugin } = await import("@tailwindcss/vite");
