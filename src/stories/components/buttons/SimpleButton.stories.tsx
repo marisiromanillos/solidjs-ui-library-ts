@@ -1,9 +1,9 @@
 import type { Meta, StoryObj } from "@kachurun/storybook-solid";
-import PrimaryButton from "@/components/buttons/PrimaryButton";
+import SimpleButton from "@/components/buttons/SimpleButton";
 
-const meta: Meta<typeof PrimaryButton> = {
-  title: "Components/Buttons/PrimaryButton",
-  component: PrimaryButton,
+const meta: Meta<typeof SimpleButton> = {
+  title: "Components/Buttons/SimpleButton",
+  component: SimpleButton,
   tags: ["autodocs"],
   argTypes: {
     buttonText: {

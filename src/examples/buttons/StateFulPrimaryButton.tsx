@@ -1,5 +1,5 @@
 import { type Component, createSignal } from "solid-js";
-import PrimaryButton from "@/components/buttons/PrimaryButton";
+import PrimaryButton from "@/components/buttons/SimpleButton";
 
 export const StateFulPrimaryButton: Component = () => {
   const [loading, setLoading] = createSignal(false);

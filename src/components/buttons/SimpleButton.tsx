@@ -1,5 +1,6 @@
+// import { ChevronLeft } from "lucide-solid";
 import type { Component } from "solid-js";
-import { mergeProps, Show } from "solid-js";
+import { type JSX, mergeProps, Show } from "solid-js";
 import { twMerge } from "tailwind-merge";
 import LoadingIcon from "@/components/icons/LoadingIcon";
 
@@ -15,6 +16,7 @@ export interface PrimaryButtonProps {
   id?: string;
   name?: string;
   ariaLabel?: string;
+  icon?: JSX.Element;
 }
 
 const PrimaryButton: Component<PrimaryButtonProps> = (props) => {
