@@ -1,6 +1,6 @@
 import confetti from "canvas-confetti";
 import { type Component, createSignal, mergeProps } from "solid-js";
-import AnimationButton from "@/components/buttons/AnimationButton";
+import AnimationButton from "./AnimationButton";
 
 interface AnimationFireworkProps {
   text?: string;
