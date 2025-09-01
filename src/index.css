@@ -1,5 +1,143 @@
 @import "tailwindcss";
 
-:root {
-  background-color: #000;
+@theme {
+  /* Light Theme */
+
+  /* Primary */
+  --color-primary-light: #6750a4;
+  --color-primary-foreground-light: #ffffff;
+  --color-primary-container-light: #eaddff;
+  --color-primary-container-foreground-light: #21005d;
+
+  /* Secondary */
+  --color-secondary-light: #625b71;
+  --color-secondary-foreground-light: #ffffff;
+  --color-secondary-container-light: #e8def8;
+  --color-secondary-container-foreground-light: #1d192b;
+
+  /* Tertiary */
+  --color-tertiary-light: #7d5260;
+  --color-tertiary-foreground-light: #ffffff;
+  --color-tertiary-container-light: #ffd8e4;
+  --color-tertiary-container-foreground-light: #31111d;
+
+  /* Destructive/Error */
+  --color-destructive-light: #ba1a1a;
+  --color-destructive-foreground-light: #ffffff;
+  --color-destructive-container-light: #f9dedc;
+  --color-destructive-container-foreground-light: #410e0b;
+
+  /* Neutral */
+  --color-background-light: #fffbfe;
+  --color-foreground-light: #1c1b1f;
+  --color-surface-light: #fffbfe;
+  --color-surface-foreground-light: #1c1b1f;
+  --color-surface-variant-light: #e7e0ec;
+  --color-surface-variant-foreground-light: #49454f;
+
+  /* Borders */
+  --color-border-light: #79747e;
+  --color-border-variant-light: #cac4d0;
+
+  /* Dark Theme */
+
+  /* Primary */
+  --color-primary-dark: #d0bcff;
+  --color-primary-foreground-dark: #381e72;
+  --color-primary-container-dark: #4f378b;
+  --color-primary-container-foreground-dark: #eaddff;
+
+  /* Secondary */
+  --color-secondary-dark: #ccc2dc;
+  --color-secondary-foreground-dark: #332d41;
+  --color-secondary-container-dark: #4a4458;
+  --color-secondary-container-foreground-dark: #e8def8;
+
+  /* Tertiary */
+  --color-tertiary-dark: #efb8c8;
+  --color-tertiary-foreground-dark: #492532;
+  --color-tertiary-container-dark: #633b48;
+  --color-tertiary-container-foreground-dark: #ffd8e4;
+
+  /* Destructive/Error */
+  --color-destructive-dark: #f2b8b5;
+  --color-destructive-foreground-dark: #601410;
+  --color-destructive-container-dark: #8c1d18;
+  --color-destructive-container-foreground-dark: #f9dedc;
+
+  /* Neutral */
+  --color-background-dark: #1c1b1f;
+  --color-foreground-dark: #e6e1e5;
+  --color-surface-dark: #1c1b1f;
+  --color-surface-foreground-dark: #e6e1e5;
+  --color-surface-variant-dark: #49454f;
+  --color-surface-variant-foreground-dark: #cac4cf;
+
+  /* Borders */
+  --color-border-dark: #938f99;
+  --color-border-variant-dark: #49454f;
+
+  /* Default to light theme */
+  --color-primary: var(--color-primary-light);
+  --color-primary-foreground: var(--color-primary-foreground-light);
+  --color-primary-container: var(--color-primary-container-light);
+  --color-primary-container-foreground: var(--color-primary-container-foreground-light);
+
+  --color-secondary: var(--color-secondary-light);
+  --color-secondary-foreground: var(--color-secondary-foreground-light);
+  --color-secondary-container: var(--color-secondary-container-light);
+  --color-secondary-container-foreground: var(--color-secondary-container-foreground-light);
+
+  --color-tertiary: var(--color-tertiary-light);
+  --color-tertiary-foreground: var(--color-tertiary-foreground-light);
+  --color-tertiary-container: var(--color-tertiary-container-light);
+  --color-tertiary-container-foreground: var(--color-tertiary-container-foreground-light);
+
+  --color-destructive: var(--color-destructive-light);
+  --color-destructive-foreground: var(--color-destructive-foreground-light);
+  --color-destructive-container: var(--color-destructive-container-light);
+  --color-destructive-container-foreground: var(--color-destructive-container-foreground-light);
+
+  --color-background: var(--color-background-light);
+  --color-foreground: var(--color-foreground-light);
+  --color-surface: var(--color-surface-light);
+  --color-surface-foreground: var(--color-surface-foreground-light);
+  --color-surface-variant: var(--color-surface-variant-light);
+  --color-surface-variant-foreground: var(--color-surface-variant-foreground-light);
+
+  --color-border: var(--color-border-light);
+  --color-border-variant: var(--color-border-variant-light);
+}
+
+/* Dark mode with class */
+.dark {
+  --color-primary: var(--color-primary-dark);
+  --color-primary-foreground: var(--color-primary-foreground-dark);
+  --color-primary-container: var(--color-primary-container-dark);
+  --color-primary-container-foreground: var(--color-primary-container-foreground-dark);
+
+  --color-secondary: var(--color-secondary-dark);
+  --color-secondary-foreground: var(--color-secondary-foreground-dark);
+  --color-secondary-container: var(--color-secondary-container-dark);
+  --color-secondary-container-foreground: var(--color-secondary-container-foreground-dark);
+
+  --color-tertiary: var(--color-tertiary-dark);
+  --color-tertiary-foreground: var(--color-tertiary-foreground-dark);
+  --color-tertiary-container: var(--color-tertiary-container-dark);
+  --color-tertiary-container-foreground: var(--color-tertiary-container-foreground-dark);
+
+  --color-destructive: var(--color-destructive-dark);
+  --color-destructive-foreground: var(--color-destructive-foreground-dark);
+  --color-destructive-container: var(--color-destructive-container-dark);
+  --color-destructive-container-foreground: var(--color-destructive-container-foreground-dark);
+
+  --color-background: var(--color-background-dark);
+  --color-foreground: var(--color-foreground-dark);
+  --color-surface: var(--color-surface-dark);
+  --color-surface-foreground: var(--color-surface-foreground-dark);
+  --color-surface-variant: var(--color-surface-variant-dark);
+  --color-surface-variant-foreground: var(--color-surface-variant-foreground-dark);
+
+  --color-border: var(--color-border-dark);
+  --color-border-variant: var(--color-border-variant-dark);
 }
