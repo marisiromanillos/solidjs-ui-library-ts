@@ -1,9 +1,6 @@
 import type { Component } from "solid-js";
-// import EmojiAnimationButton from "@/components/buttons/EmojiAnimationButton";
-import StatefulPrimaryButton from "@/examples/buttons/StateFulPrimaryButton";
 
-// import ConfettiAnimationButton from "./components/buttons/ConfettiAnimationButton";
-// import FireworkAnimationButton from "./components/buttons/funkybuttons/FireworkAnimationButton";
+import StatefulPrimaryButton from "@/examples/buttons/StateFulPrimaryButton";
 
 const App: Component = () => {
   return (
