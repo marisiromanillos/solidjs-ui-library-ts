@@ -1,13 +1,14 @@
 @import "tailwindcss";
 
 @theme {
-  /* Light Theme */
+  /* ===== COLORS ===== */
+  /* Material Design 3 - Light Theme */
 
   /* Primary */
   --color-primary-light: #6750a4;
   --color-primary-foreground-light: #ffffff;
-  --color-primary-container-light: #eaddff;
-  --color-primary-container-foreground-light: #21005d;
+  --color-primary-container-light: #e8def8;
+  --color-primary-container-foreground-light: #1e192b;
 
   /* Secondary */
   --color-secondary-light: #625b71;
@@ -39,7 +40,7 @@
   --color-border-light: #79747e;
   --color-border-variant-light: #cac4d0;
 
-  /* Dark Theme */
+  /* Material Design 3 - Dark Theme */
 
   /* Primary */
   --color-primary-dark: #d0bcff;
@@ -107,6 +108,196 @@
 
   --color-border: var(--color-border-light);
   --color-border-variant: var(--color-border-variant-light);
+
+  /* ===== ELEVATION (MD3 Tonal Elevation) ===== */
+  --color-surface-1: color-mix(in srgb, var(--color-primary) 5%, var(--color-surface));
+  --color-surface-2: color-mix(in srgb, var(--color-primary) 8%, var(--color-surface));
+  --color-surface-3: color-mix(in srgb, var(--color-primary) 11%, var(--color-surface));
+  --color-surface-4: color-mix(in srgb, var(--color-primary) 12%, var(--color-surface));
+  --color-surface-5: color-mix(in srgb, var(--color-primary) 14%, var(--color-surface));
+
+  /* ===== SHAPE SYSTEM (Corner Radius) ===== */
+  /* Material Design 3 uses these standard corner radius values */
+  --radius-none: 0px; /* Square corners */
+  --radius-xs: 4px; /* Extra small rounding */
+  --radius-sm: 8px; /* Small rounding */
+  --radius-md: 12px; /* Medium rounding - default for cards */
+  --radius-lg: 16px; /* Large rounding */
+  --radius-xl: 28px; /* Extra large - for FABs and prominent elements */
+  --radius-full: 9999px; /* Fully rounded/pill shape */
+
+  /* ===== STATE LAYER OPACITY ===== */
+  --opacity-hover: 0.08;
+  --opacity-focus: 0.12;
+  --opacity-pressed: 0.12;
+  --opacity-dragged: 0.16;
+  --opacity-disabled: 0.38;
+  --opacity-disabled-container: 0.12;
+
+  /* ===== TYPOGRAPHY SCALE (Material Design 3) ===== */
+  /* Display - Large text for hero sections */
+  --font-size-display-large: 3.5625rem; /* 57px */
+  --line-height-display-large: 4rem; /* 64px */
+  --font-size-display-medium: 2.8125rem; /* 45px */
+  --line-height-display-medium: 3.25rem; /* 52px */
+  --font-size-display-small: 2.25rem; /* 36px */
+  --line-height-display-small: 2.75rem; /* 44px */
+
+  /* Headline - For page titles and major sections */
+  --font-size-headline-large: 2rem; /* 32px */
+  --line-height-headline-large: 2.5rem; /* 40px */
+  --font-size-headline-medium: 1.75rem; /* 28px */
+  --line-height-headline-medium: 2.25rem; /* 36px */
+  --font-size-headline-small: 1.5rem; /* 24px */
+  --line-height-headline-small: 2rem; /* 32px */
+
+  /* Title - For medium-emphasis shorter text */
+  --font-size-title-large: 1.375rem; /* 22px - Regular weight */
+  --line-height-title-large: 1.75rem; /* 28px */
+  --font-size-title-medium: 1rem; /* 16px - Medium weight */
+  --line-height-title-medium: 1.5rem; /* 24px */
+  --font-size-title-small: 0.875rem; /* 14px - Medium weight */
+  --line-height-title-small: 1.25rem; /* 20px */
+
+  /* Body - For longer passages of text */
+  --font-size-body-large: 1rem; /* 16px */
+  --line-height-body-large: 1.5rem; /* 24px */
+  --font-size-body-medium: 0.875rem; /* 14px */
+  --line-height-body-medium: 1.25rem; /* 20px */
+  --font-size-body-small: 0.75rem; /* 12px */
+  --line-height-body-small: 1rem; /* 16px */
+
+  /* Label - For UI components and very small text */
+  --font-size-label-large: 0.875rem; /* 14px - Medium weight */
+  --line-height-label-large: 1.25rem; /* 20px */
+  --font-size-label-medium: 0.75rem; /* 12px - Medium weight */
+  --line-height-label-medium: 1rem; /* 16px */
+  --font-size-label-small: 0.6875rem; /* 11px - Medium weight */
+  --line-height-label-small: 1rem; /* 16px */
+
+  /* ===== MOTION (Duration) ===== */
+  --duration-short-1: 50ms;
+  --duration-short-2: 100ms;
+  --duration-short-3: 150ms;
+  --duration-short-4: 200ms;
+  --duration-medium-1: 250ms;
+  --duration-medium-2: 300ms;
+  --duration-medium-3: 350ms;
+  --duration-medium-4: 400ms;
+  --duration-long-1: 450ms;
+  --duration-long-2: 500ms;
+  --duration-long-3: 550ms;
+  --duration-long-4: 600ms;
+
+  /* ===== MOTION (Easing) ===== */
+  --ease-standard: cubic-bezier(0.2, 0, 0, 1);
+  --ease-standard-decelerate: cubic-bezier(0, 0, 0, 1);
+  --ease-standard-accelerate: cubic-bezier(0.3, 0, 1, 1);
+  --ease-emphasized: cubic-bezier(0.2, 0, 0, 1);
+  --ease-emphasized-decelerate: cubic-bezier(0.05, 0.7, 0.1, 1);
+  --ease-emphasized-accelerate: cubic-bezier(0.3, 0, 0.8, 0.15);
+
+  /* ===== FONT WEIGHTS ===== */
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-bold: 700;
+
+  /* ===== SPACING SYSTEM (8px grid) ===== */
+  --spacing-0: 0px;
+  --spacing-1: 4px;
+  --spacing-2: 8px;
+  --spacing-3: 12px;
+  --spacing-4: 16px;
+  --spacing-5: 20px;
+  --spacing-6: 24px;
+  --spacing-8: 32px;
+  --spacing-10: 40px;
+  --spacing-12: 48px;
+  --spacing-16: 64px;
+  --spacing-20: 80px;
+  --spacing-24: 96px;
+
+  /* ===== ELEVATION SHADOWS ===== */
+  --shadow-1: 0px 1px 3px 1px rgba(0, 0, 0, 0.15), 0px 1px 2px 0px rgba(0, 0, 0, 0.3);
+  --shadow-2: 0px 2px 6px 2px rgba(0, 0, 0, 0.15), 0px 1px 2px 0px rgba(0, 0, 0, 0.3);
+  --shadow-3: 0px 4px 8px 3px rgba(0, 0, 0, 0.15), 0px 1px 3px 0px rgba(0, 0, 0, 0.3);
+  --shadow-4: 0px 6px 10px 4px rgba(0, 0, 0, 0.15), 0px 2px 3px 0px rgba(0, 0, 0, 0.3);
+  --shadow-5: 0px 8px 12px 6px rgba(0, 0, 0, 0.15), 0px 4px 4px 0px rgba(0, 0, 0, 0.3);
+
+  /* ===== CONTAINER WIDTHS ===== */
+  --container-compact: 600px;
+  --container-medium: 840px;
+  --container-expanded: 1200px;
+  --container-large: 1600px;
+
+  /* ===== Z-INDEX LAYERS ===== */
+  --z-index-dropdown: 1000;
+  --z-index-sticky: 1020;
+  --z-index-fixed: 1030;
+  --z-index-modal-backdrop: 1040;
+  --z-index-modal: 1050;
+  --z-index-popover: 1060;
+  --z-index-tooltip: 1070;
+
+  /* ===== ICON SIZES (Material Design 3) ===== */
+  --icon-size-xs: 16px;
+  --icon-size-sm: 18px;
+  --icon-size-md: 24px; /* MD3 default icon size */
+  --icon-size-lg: 32px;
+  --icon-size-xl: 40px;
+  --icon-size-2xl: 48px;
+
+  /* ===== COMPONENT HEIGHTS (Material Design 3) ===== */
+  --component-height-xs: 28px;
+  --component-height-sm: 32px;
+  --component-height-md: 40px; /* Default button height */
+  --component-height-lg: 48px;
+  --component-height-xl: 56px; /* Text field height */
+  --component-height-2xl: 64px; /* App bar height */
+
+  /* ===== FOCUS INDICATORS ===== */
+  --focus-ring-width: 2px;
+  --focus-ring-color: var(--color-primary);
+  --focus-ring-offset: 2px;
+
+  /* ===== LETTER SPACING ===== */
+  --letter-spacing-tighter: -0.05em;
+  --letter-spacing-tight: -0.025em;
+  --letter-spacing-normal: 0em;
+  --letter-spacing-wide: 0.025em;
+  --letter-spacing-wider: 0.05em;
+  --letter-spacing-widest: 0.1em;
+
+  /* ===== MINIMUM TOUCH TARGET ===== */
+  --min-touch-target: 48px; /* Material Design accessibility requirement */
+
+  /* ===== RIPPLE EFFECT ===== */
+  --ripple-duration: 550ms;
+  --ripple-opacity: 0.12;
+
+  /* ===== BREAKPOINTS (Material Design 3) ===== */
+  --breakpoint-xs: 0px;
+  --breakpoint-sm: 600px;
+  --breakpoint-md: 1024px;
+  --breakpoint-lg: 1440px;
+  --breakpoint-xl: 1920px;
+
+  /* ===== FAB SIZES ===== */
+  --fab-size-small: 40px;
+  --fab-size-medium: 56px;
+  --fab-size-large: 96px;
+
+  /* ===== CHIP HEIGHTS ===== */
+  --chip-height: 32px;
+
+  /* ===== BADGE SIZES ===== */
+  --badge-size-small: 6px;
+  --badge-size-medium: 8px;
+  --badge-size-large: 16px;
+
+  /* ===== DIVIDER ===== */
+  --divider-thickness: 1px;
+  --divider-color: var(--color-border-variant);
 }
 
 /* Dark mode with class */
