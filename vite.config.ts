@@ -1,10 +1,17 @@
 import path from "node:path";
 import tailwindcss from "@tailwindcss/vite";
+import devtools from "solid-devtools/vite";
 import { defineConfig } from "vite";
 import solidPlugin from "vite-plugin-solid";
 
 export default defineConfig({
-  plugins: [solidPlugin(), tailwindcss()],
+  plugins: [
+    solidPlugin(),
+    tailwindcss(),
+    devtools({
+      autoname: true,
+    }),
+  ],
   server: {
     port: 3000,
   },
