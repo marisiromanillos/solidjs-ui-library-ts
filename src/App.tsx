@@ -1,5 +1,5 @@
 import type { Component } from "solid-js";
-
+import "solid-devtools";
 import StatefulPrimaryButton from "@/examples/buttons/StateFulPrimaryButton";
 
 const App: Component = () => {
